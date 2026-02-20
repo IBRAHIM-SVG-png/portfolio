@@ -16,9 +16,19 @@
 
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- ⭐ Three.js CDN (3D) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- ⭐ Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 
 <body>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<div id="particles-js"></div>
+<!-- ⭐ PARTICLES BACKGROUND -->
+<div id="particles-js"></div>
 
 <header>
     <nav id="navbar">
@@ -34,6 +44,12 @@
 </header>
 
 <!-- HERO -->
+ <div class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <!-- Your text here -->
+    </div>
+</div>
 <section id="home" class="section">
     <div class="hero" data-aos="fade-up">
         <h1>Hi, I'm <span class="name">Ibrahim J</span></h1>
@@ -77,7 +93,6 @@
 
     <div class="projects-grid">
 
-        <!-- Habit Creator -->
         <div class="project-card" data-aos="zoom-in">
             <img src="habit-creator.jpg" alt="Habit Creator">
             <h3>Habit Creator App</h3>
@@ -88,7 +103,6 @@
             </div>
         </div>
 
-        <!-- Tic Tac Toe -->
         <div class="project-card" data-aos="zoom-in">
             <img src="tic-tac-toe.jpg" alt="Tic Tac Toe">
             <h3>Tic Tac Toe Game</h3>
@@ -99,7 +113,6 @@
             </div>
         </div>
 
-        <!-- Weather App -->
         <div class="project-card" data-aos="zoom-in">
             <img src="weather-app.jpg" alt="Weather App">
             <h3>Weather App</h3>
@@ -120,7 +133,7 @@
 
     <div class="contact-links">
         <a href="mailto:ibrahimj@karunya.edu.in">📧 Email</a>
-        <a href="https://www.linkedin.com/in/ibrahim-j-705587336" target="_blank">💼 LinkedIn</a>
+        <a href="https://www.linkedin.com/in/ibrahim-j-705587336/" target="_blank">💼 LinkedIn</a>
         <a href="https://github.com/IBRAHIM-SVG-png" target="_blank">💻 GitHub</a>
         <a href="https://wa.me/919342424751" target="_blank">📱 WhatsApp</a>
     </div>
@@ -130,16 +143,58 @@
     <p>© 2026 Ibrahim J | Coimbatore, Tamil Nadu</p>
 </footer>
 
-<!-- AOS Script -->
+<!-- ⭐ AOS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-    AOS.init({ duration: 1000 });
 
-    // Dark Mode Toggle
-    const toggleBtn = document.getElementById("theme-toggle");
-    toggleBtn.onclick = () => {
-        document.body.classList.toggle("dark");
-    };
+<script>
+AOS.init({ duration: 1000 });
+
+// 🌙 Dark Mode Toggle
+const toggleBtn = document.getElementById("theme-toggle");
+toggleBtn.onclick = () => {
+    document.body.classList.toggle("dark");
+};
+
+// ⭐ PARTICLES INIT
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    size: { value: 3 },
+    move: { speed: 2 },
+    line_linked: { enable: true }
+  }
+});
+
+// ⭐ SIMPLE 3D OBJECT
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true });
+
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.domElement.style.position = "fixed";
+renderer.domElement.style.top = "0";
+renderer.domElement.style.zIndex = "-2";
+document.body.appendChild(renderer.domElement);
+
+const geometry = new THREE.TorusKnotGeometry(2, 0.4, 100, 16);
+const material = new THREE.MeshStandardMaterial({ color: 0x00ffff, wireframe: true });
+const torus = new THREE.Mesh(geometry, material);
+
+scene.add(torus);
+
+const light = new THREE.PointLight(0xffffff, 1);
+light.position.set(10,10,10);
+scene.add(light);
+
+camera.position.z = 6;
+
+function animate() {
+  requestAnimationFrame(animate);
+  torus.rotation.x += 0.005;
+  torus.rotation.y += 0.007;
+  renderer.render(scene, camera);
+}
+animate();
 </script>
 
 </body>
