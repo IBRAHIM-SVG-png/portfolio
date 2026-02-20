@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibrahim J | Front-End Developer | Coimbatore</title>
+
+    <meta name="description" content="Ibrahim J - URK24AI1020 - Front-End Developer from Coimbatore, Tamil Nadu. React Developer & UI Designer.">
+    <meta name="keywords" content="Ibrahim J, Frontend Developer, Coimbatore, React Developer, Portfolio">
+    <meta name="author" content="Ibrahim J">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <nav id="navbar">
+        <h2 class="logo">Ibrahim J</h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle">🌙</button>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="section">
+    <div class="hero" data-aos="fade-up">
+        <h1>Hi, I'm <span class="name">Ibrahim J</span></h1>
+        <h2>Front-End Developer & React Enthusiast</h2>
+        <p>Building clean, responsive and user-friendly web applications.</p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">View My Work</a>
+            <a href="resume.pdf" download class="btn secondary">Download Resume</a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section" data-aos="fade-up">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <img src="profile.jpg" alt="Ibrahim J Profile" class="profile-img">
+
+        <div class="about-text">
+            <p>
+                I'm <strong>Ibrahim J</strong> (URK24AI1020) from Coimbatore, Tamil Nadu.
+                Passionate about building real-world web applications that solve problems.
+            </p>
+
+            <div class="skills">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Responsive Design</span>
+                <span>Git & GitHub</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+    <h2 data-aos="fade-up">My Projects</h2>
+
+    <div class="projects-grid">
+
+        <!-- Habit Creator -->
+        <div class="project-card" data-aos="zoom-in">
+            <img src="habit-creator.jpg" alt="Habit Creator">
+            <h3>Habit Creator App</h3>
+            <p>Track daily habits with streak system and local storage support.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Live Demo →</a>
+                <a href="#" target="_blank">Code →</a>
+            </div>
+        </div>
+
+        <!-- Tic Tac Toe -->
+        <div class="project-card" data-aos="zoom-in">
+            <img src="tic-tac-toe.jpg" alt="Tic Tac Toe">
+            <h3>Tic Tac Toe Game</h3>
+            <p>Interactive 2-player game built using JavaScript.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Live Demo →</a>
+                <a href="#" target="_blank">Code →</a>
+            </div>
+        </div>
+
+        <!-- Weather App -->
+        <div class="project-card" data-aos="zoom-in">
+            <img src="weather-app.jpg" alt="Weather App">
+            <h3>Weather App</h3>
+            <p>Live weather updates using API integration.</p>
+            <div class="project-links">
+                <a href="#" target="_blank">Live Demo →</a>
+                <a href="#" target="_blank">Code →</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section" data-aos="fade-up">
+    <h2>Get In Touch</h2>
+    <p>Let's build something amazing together 🚀</p>
+
+    <div class="contact-links">
+        <a href="mailto:ibrahim@example.com">📧 Email</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">💼 LinkedIn</a>
+        <a href="https://github.com/yourusername" target="_blank">💻 GitHub</a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank">📱 WhatsApp</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Ibrahim J | Coimbatore, Tamil Nadu</p>
+</footer>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000 });
+
+    // Dark Mode Toggle
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.onclick = () => {
+        document.body.classList.toggle("dark");
+    };
+</script>
+
+</body>
+</html>
